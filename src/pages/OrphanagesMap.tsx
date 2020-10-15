@@ -13,7 +13,6 @@ interface Orphanage {
   latitude: number;
   longitude: number;
   name: string;
-
 }
 
 function OrphanagesMap() {
@@ -41,7 +40,7 @@ function OrphanagesMap() {
 
       <Map
         center={[-21.2330215, -50.4728467]}
-        zoom={14}
+        zoom={16}
         style={{ width: "100%", height: "100%" }}
       >
         <TileLayer
