@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import "../styles/pages/create-orphanage.css";
 import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
+import location from '../utils/location';
 import api from "../services/api";
 
 export default function CreateOrphanage() {
@@ -81,7 +82,7 @@ export default function CreateOrphanage() {
             <legend>Dados</legend>
 
             <Map
-              center={[-27.2092052, -49.6401092]}
+              center={[location.latitude, location.longitude]}
               style={{ width: "100%", height: 280 }}
               zoom={15}
               onclick={handleMapClick}
@@ -190,5 +191,3 @@ export default function CreateOrphanage() {
     </div>
   );
 }
-
-// return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;

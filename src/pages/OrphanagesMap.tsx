@@ -6,6 +6,7 @@ import "../styles/pages/orphanages-map.css";
 
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import mapIcon from "../utils/mapIcon";
+import location from '../utils/location';
 import api from "../services/api";
 
 interface Orphanage {
@@ -22,7 +23,7 @@ function OrphanagesMap() {
       setOrphanages(res.data);
     });
   }, []);
-
+  
   return (
     <div id="page-map">
       <aside>
@@ -39,7 +40,7 @@ function OrphanagesMap() {
       </aside>
 
       <Map
-        center={[-21.2330215, -50.4728467]}
+        center={[location.latitude, location.longitude]}
         zoom={16}
         style={{ width: "100%", height: "100%" }}
       >
